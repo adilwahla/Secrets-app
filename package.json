@@ -5,7 +5,13 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node app.js" 
+    "precompress": "echo 'Preparing for compress...'",
+    "compress": "echo 'Compressing files...'",
+    "postcompress": "echo 'Compressing complete!'",
+    "prestart": "echo 'Preparing to start...'",
+    "start": "node app.js",
+    "poststart": "echo 'Server has started.'"
+   
   },
   "keywords": [],
   "author": "",
