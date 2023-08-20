@@ -20,8 +20,9 @@ const { Strategy } = require("passport-local");
 // const saltRounds = 10;// enough else will take more time 
 const path = require('path');
 app.use(express.static("public"));
-app.set('views', path.join(__dirname, 'views'));
 app.set("view engine", "ejs");
+app.set('views', path.join(__dirname, 'views'));
+
 app.use(bodyParser.urlencoded({
     extended:true
 }));
