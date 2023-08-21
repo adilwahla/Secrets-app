@@ -73,7 +73,7 @@ passport.serializeUser(function(user, cb) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/secrets",
+    callbackURL: "https://secrets-app-nine.vercel.app/auth/google/secrets",
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
@@ -87,7 +87,8 @@ passport.use(new GoogleStrategy({
 passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/github/secrets"
+   // callbackURL: "http://localhost:3000/auth/github/secrets"
+    callbackURL: "https://secrets-app-nine.vercel.app/auth/github/secrets"
   },
   function(accessToken, refreshToken, profile, done) {
     User.findOrCreate({ githubId: profile.id }, function (err, user) {
